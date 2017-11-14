@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+  <!--  singleton means only one object 
+  If the scope is set to prototype, the Spring IoC container 
+  creates a new bean instance of the object every time a request for 
+  that specific bean is made. As a rule, use the prototype
+   scope for all state-full beans and the singleton scope for stateless beans.
+  -->
+  
+   <bean id = "helloWorld" class = "singleton.HelloWorld" scope = "prototype">
+   </bean>
+
+</beans>
