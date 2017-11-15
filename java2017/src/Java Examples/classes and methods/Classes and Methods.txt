@@ -1,0 +1,314 @@
+				Classes and methods
+				--------------------
+
+Classes are the most important language feature that make object-oriented programming (OOP) possible
+
+
+Programming in Java consists of defining a number of classes
+Every program is a class
+
+All helping software consists of classes
+
+All programmer-defined types are classes
+
+Classes are central to Java
+
+Classes can be defined as  collection of data 	and methods.
+
+Classes are  also called as template because they provide basic 
+framework of an object.
+
+Classes are fundamentals of Java language.
+
+
+class is a user defined datatype(ADT)
+class acts like a  blue print for creating objects.
+
+A class contains
+Data members -->properties
+member functions -->behaviour
+
+Data members are accessed through the methods
+
+An object is an instance of a class
+
+classname objname=new  classname();
+syntax 2:
+classname  obj;
+obj=new classname();
+
+classinstantiation
+
+
+ex :
+
+class Animal
+{
+ public int noOfLegs; 
+ public String name;
+ private char gender;   
+ 
+ public void showData()
+ {
+   display(“Name :” + name);
+   display(“Number of Legs:” + noOfLegs );
+   display(“Gender :” + gender);
+ }
+}
+
+Note :if we declare any class as final then they cannot be inherited by sub class
+
+---> example programs:
+
+-----------------------------------------------------------------------------------
+
+
+Constructor:
+------------
+
+Constructor will have same name as that of class name.
+
+Constructor is a special method that does not have a return type.
+
+Constructors act as normal methods or functions which cannot return any value. 
+
+A constructor is defined for every class   to  initialize  its member variables(instance Varaiables).
+
+When an object is created its constructor is called.
+
+If there is no constructor,  the default constructor is called.
+
+In Java, Constructor can be of two types 
+
+1) Default  Constructor
+2)Parameterized Constructor
+
+
+
+   Initial values assigned by the default constructor are:
+   Integer variable	    -	0
+   Float variable	    -	0.0
+   String variable	    -	null
+   Boolean variable   -	false
+
+ex: 1) Program to define a Constructor
+    2) Program to define a Construcotr with parameters
+    3)program to demo constructor overloading
+
+
+this KeyWord:
+-------------
+This refers to the Current Object. that is object of the present class.
+when we create an object to a class a default reference is also created internally to 
+the object. 
+This default reference is called as "this".
+
+
+
+          __________________
+         | instace varaibles|
+this---->|------------------|
+         |construcotrs      |
+	 |------------------|
+	 |Methods           | 
+	 |__________________|
+
+
+this always refers to the object on which the method is called
+
+to differentiate the instance varaibles and local varaibles this key word can be  used.
+
+---> Program to Demo this keyword.
+
+---------------------------------------------------------
+Methods:
+--------
+
+Methods are block  of executable statements.
+
+Methods are used to manipulate the data contained in the class.
+
+Methods provide a structured approach to programming.
+
+Methods also can be overloaded and overrided.
+
+if we declare any methods as final then they cannot be inherited by sub class.
+
+
+Method definitions are divided into two parts:  
+a heading and a method body:
+ public void myMethod()  // Heading
+ {
+    code  to perform some action       //Body
+    and/or compute a value                           
+ } 
+
+Invoking a method is equivalent to executing the method body
+
+a method is called into action by writing the name of the calling object, 
+followed by a dot, followed by the method name, followed by parentheses
+
+classVar.myMethod();
+
+This is sometimes referred to as sending a message to the object
+
+The parentheses contain the information (if any) needed by the method
+
+This information is called an argument (or arguments)
+
+we can pass parameters to methods 
+
+using call by value
+using call by reference(passing objects to methods).
+
+--->program to demo call by value
+--->program to demo call by reference.
+
+
+
+----------------------------------------------------------------------------------
+
+
+Static Fields and static methods
+--------------------------------
+
+we can  define any varaible and method in a class as static using static keyword
+as follows
+
+class Demo
+{
+    static int a;
+
+    static void display()
+    {
+       ---
+       ---
+    }
+}
+static methods are the methods defined by static keyword which doesnot require any object to invoke them.
+
+it doesnot act upon instance variable.
+
+ex:
+ 
+
+ class Test
+ {
+      //instance var
+
+      int x;
+
+      static int y=100;
+
+      Test(int x)
+      {
+         this.x=x;
+      }
+
+      static void access()
+      {
+             System.out.println("x="+x);
+             System.out.println("Y="+y);
+      }
+ }
+
+
+ to call a static method 
+
+
+ Syntax:   Classname.staticmethodname();
+
+	   Test obj=new Test(10);
+
+           Test.access();// Error ! non  static variable x cannot be reference from a static context:
+
+but a static method can access static variable it can print y val
+
+
+Note: instance varaibles are not available to the static methods because
+      After executing the static mathods only JVM Creates the Objects.so at that time
+      instance varaibles will not be available to the Static methods.
+
+  ____________________________________________________________________________
+
+
+Static Blocks
+-------------
+
+static
+{
+  System.out.println("Iam in Static Block");
+
+}
+PSVM(String a[])
+{
+  System.out.println("in main");
+}
+
+
+we thought that main() wil be the first block that will be executed this is ok unless 
+
+we have a static block.
+
+we can compile a program and cannot run it without writing main()?
+
+but we can cheat jvm as follows:
+
+class Test
+{
+     static
+     {
+        int n=5;
+	for(int i=1;i<=10;i++)
+	System.out.println(n+"*"+i+"="+(n*i));
+        System.exit(0);
+     }
+ }
+
+
+----------------------------------------------------------------------
+
+
+local variables:
+------------------
+
+A variable that is declared locally inside a method or constructor is called as 
+a local  varaible.
+
+Test(int a) //here a is a local varaible
+void setAge(int age); //age is a local variable
+
+local variable cannot be accessed from out side main().
+
+
+Access Control:
+---------------------
+
+
+4 keywords
+
+private--->accessed within the class 
+
+public --->can be accessed any where
+
+protected --->accessed anywhere but within same package.
+
+default----->similar to public
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

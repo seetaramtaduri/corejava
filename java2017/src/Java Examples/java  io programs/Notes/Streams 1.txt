@@ -1,0 +1,144 @@
+A stream is a flow of data from one point to another
+without streams we cannot make data to flow.
+
+there are 2 types of streams
+
+1)InputStream ---read or receive data .
+2)OutputStream---send or write data to some other place. 
+
+another two types of classifications.
+
+1)Byte Stream - read or write data in the form of individual bits
+2)Text Stream - they handle data in the from of text or characters
+
+all streams are represented as classes in java.io
+
+                          
+                           InputStream
+	                        |
+          _____________________________________________
+          |                     |		      |	
+     FileInputStream  FilterInputStream   ObjectInputStream
+                               |
+			 ________________
+			 |              |
+		BufferedInputStream    DataInputStream
+
+->InputStream class is a abstract class
+->these classes read and receive data in the form of Bytes
+
+
+                            OutputStream
+	                        |
+          _____________________________________________
+          |                     |		      |	
+     FileOutputStream     FilterOutputStream   ObjectOutputStream
+                               |
+			 ________________
+			 |              |
+	     BufferedOutputStream    DataOutputStream
+
+
+FileInputStream and FileOutputStream
+-------------------------------------
+
+they are used to read and write data to disk files.
+
+FilterInputStream and FilterOutputStream
+-----------------------------------------
+They read from one stream and write to other Stream
+
+ObjectInputStream and ObjectOutputStream.
+-----------------------------------------
+they handle storage of objects and primitive data
+
+
+** to handle data in the form of text we use the following abstarct classes.
+
+Reader 
+Writer
+
+                              Reader
+			       |
+             _________________________________________________________________
+	     |                    |                |                         |
+	     BufferedReader  CharArrayReader  InputStreamReader     PrintReader
+	                                           |
+					        FileReader
+
+
+                             Writer
+			       |
+             _________________________________________________________________
+	     |                    |                |                         |
+	     BufferedWriter  CharArrayWriter  InputStreamWriter     PrintWriter
+	                                           |
+					        FileWriter
+
+BufferedReader and BufferedWriter:
+-------------------------------------
+
+Handles characeters(text) by buffering them 
+to provide effiecency
+they allot same memory and performs operations
+
+CharArrayReader and CharArrayWriter 
+------------------------------------
+
+Handles Array of characters
+
+InputStreamReader and OutputStreamReader
+----------------------------------------
+they are bridge between byte streams and character streams
+Reader reads bytes and decodes them  into 16bit unicode characters 
+Writer decodes characters into bytes and write.
+
+printWriter or PrintReader
+--------------------------
+Handles printing on screen and paper.
+
+File-->is an organized collection of data.
+System class has three fileds
+System.in-->keyboard
+System.out-->monitor
+System.err-->to display err messages on the monitor.
+
+the main of streams is to acheive hardware independence.
+
+Prog1
+
+//steps to create a Text  File
+
+
+1. attach a keyboard to DataInputStream
+2.attach a file to FileOutputStream
+3.read data from dis and write it to fout 
+4.close file
+
+1) program to demo writing contents to a File.
+
+in the above program instead of DIS we can use BufferedInputStream 
+so as it provides Efficiency because it writes all group at a time.
+
+default buffer size alloted is 512kb
+
+2)program to read DataFrom File
+
+3)create a file using FileWriter
+
+4)program to read Data From File using FileReader
+
+__________________________________________________________________
+DeflaterInputStream and  DeflaterOutputStream
+-----------------------------------------------
+
+these classes are part of java.util.zip to zip and unzip files
+
+File class
+-----------
+
+File class methods 
+
+program to demo File class
+
+______________________________________________________________________

@@ -1,0 +1,53 @@
+Interfaces
+
+1) Interfaces are similar to  classes but it contains method without body
+2) Interfaces are used to implement multiple inheritence in java,
+   since no two classes can be extended by  a single class.
+3) Like  a class it can have vraibles and methods without body
+4) An interface is anamed collection of method declarations without implementation
+5) "interface"  keyword is used to declare interface. and "implements" keyword is 
+    used by sub classes to implement methods defined in the interface .
+   interface Car
+   {
+        static final wheels=4;
+	static final color="red";
+	public void cardetails();
+   }
+
+6) All the variables declared in an interface can be declared as "static" and "final".
+   class Santro implements Car
+   {
+       public void cardetails()
+       {
+          --
+	  --
+	  --
+       }
+    }
+7) all interfaces are public and abstract by default
+
+  public abstract interface Car
+  {
+    ---
+    ---
+  }
+
+
+
+
+
+
+
+
+
+7)we can create references to the interfaces.
+8)interfaces can be extended.
+
+  interface xyz
+  {
+    --
+  }
+  interface abc extends xyz
+  {
+    ----
+  }

@@ -1,0 +1,64 @@
+1) Java’s I/O Is Built upon Streams.
+---------------------------------------------
+Java programs perform I/O through streams.
+
+A stream is an abstraction that either produces or consumes information. 
+
+A stream is linked to a physical device by the Java I/O system. 
+
+Allstreams behave in the same manner, even if the actual physical devices they are linked to differ.
+
+Thus, the same I/O classes and methods can be applied to any type of device. 
+
+For example, the same methods that you use to write to the console can also be used to write to a disk file. 
+
+Java implements streams within classes defined in the java.io package.
+
+Byte Streams and Character Streams
+------------------------------------------------
+Modern versions of Java define two types of streams: byte and character. 
+
+Byte streams
+they provide a convenient means for handling input and output of bytes. 
+They are used, for example, when reading or writing binary data. 
+
+They are especially helpful when working with files.
+
+Byte streams are defined by using two class hierarchies. 
+At the top of these are two abstract classes:
+InputStream and OutputStream. 
+
+InputStream defines the characteristics common
+to byte input streams and OutputStream describes the behavior of byte output streams.
+
+Byte Stream                    Class Meaning
+BufferedInputStream   -->    Buffered input stream
+BufferedOutputStream  -->  Buffered output stream
+ByteArrayInputStream   -->  Input stream that reads from a byte 					array
+ByteArrayOutputStream -->  Output stream that writes to a byte 					array
+DataInputStream : An input stream that contains methods for reading the Java standard data types
+DataOutputStream An output stream that contains methods for writing the Java standard data types
+FileInputStream -- > Input stream that reads from a file
+FileOutputStream-->  Output stream that writes to a file
+FilterInputStream Implements InputStream
+FilterOutputStream Implements OutputStream
+
+InputStream --> Abstract class that describes stream input
+ObjectInputStream -->  Input stream for objects
+ObjectOutputStream --> Output stream for objects
+
+OutputStream ---> Abstract class that describes stream output
+ PipedInputStream --> Input pipe
+PipedOutputStream --> Output pipe
+PrintStream --> Output stream that contains print( ) and println( )
+PushbackInputStream --> Input stream that allows bytes to be returned to the stream
+RandomAccessFile --> Supports random access file I/O
+SequenceInputStream-->  Input stream that is a combination of two or more input streams that will be read sequentially, one after the other
+
+
+
+
+Character streams 
+------------------------
+are designed for handling the input and output of characters. They use Unicode and, therefore, can be internationalized. Also, in some cases, character streams are more efficient than byte streams.
+

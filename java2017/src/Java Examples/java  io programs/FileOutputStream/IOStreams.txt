@@ -1,0 +1,77 @@
+The Java Input/Output (I/O) is a part of java.io package. 
+
+The java.io package contains a relatively large number of classes that support  input and output operations. 
+
+The classes  in the Io  package are primarily abstract classes and stream-oriented classes they define methods and  subclasses which allow bytes to be read from and written to files or other input and  output sources.
+
+The InputStream and OutputStream  are central classes in the package  which are used for reading from and writing to byte streams, respectively.
+
+InputStream:
+------------------
+ It is an abstract class    used for reading the data such as a byte and array of bytes  from an input source such as  file, a string, or memory that may  contain the data. 
+
+An input stream is automatically opened when you create it. 
+
+use close( ) method to close the stream.
+
+The subclasses inherited from the InputStream class can be seen in a hierarchy manner (refer fig)
+
+InputStream is inherited from the Object class. Each class of the InputStreams provided  by the java.io package is intended for a different purpose.
+
+OutputStream:
+-------------------
+ used for writing byte and array  of bytes to an output source 
+such as a file, a string, or memory containing the data. 
+
+ an output  stream is automatically opened when you create it.
+
+we can  close an output  stream with the close( ) method, can be  closed implicitly when the object is garbage  collected.
+
+The classes inherited from the OutputStream class can be seen in a hierarchy structure  shown below:(refer fig)
+
+ Files and Streams  in java  Works  as follows:
+----------------------------------------------------------
+Java uses streams to handle I/O operations through which the data is flowed from one  location to another.
+
+For example, an InputStream can flow the data from a disk file to  the  internal memory and an OutputStream can flow the data from the internal memory  to a disk file. The disk-file may be a text file or a binary file. 
+
+When we work with a text  file,  we use a character stream where one character is treated as per byte on disk. 
+When  we work with a binary file,  we use a binary stream.
+
+Reading Text from the Standard Input
+-------------------------------------------------
+we use Standard Streams for this purpose
+we have 3 Standard Streams:
+Standard Input: use System.in to read input from the keyboard.
+Standard Output: use System.out to write output to be display.
+Standard Error: use System.err to write error output to be  				display.
+
+Java read file line by line 
+---------------------------------
+
+Java supports the following I/O file streams.
+   1)     FileInputstream
+   2)    FileOutputStream
+FileInputstream:
+This class is a subclass of Inputstream class that reads bytes from a specified file name . 
+methods
+read()  :  reads a byte or array of bytes from the file. 
+              It returns -1 when the end-of-file has been reached. We typically use this class along with a   BufferedInputStream and DataInputstream class to read binary data. 
+	      To read text  data, this class is used with an InputStreamReader and BufferedReader  class. 
+	      This  class throws FileNotFoundException, if the specified file is not exist. 
+	      
+	      You can use the  constructor of this stream as:
+
+FileInputstream(File filename);
+
+
+
+2) FileOutputStream:
+  This class is a subclass of OutputStream that writes data to a specified file name. 
+   write() method of this class writes a byte or array of bytes to the file. 
+   We typically use  this class along  with a BufferedOutputStream and a DataOutputStreamclass to write binary data. 
+   To write text, we typically use it with a PrintWriter, BufferedWriter and an OutputStreamWriter class. 
+   
+   You can use the constructor of this  stream as:
+    FileOutputstream(File filename);
+

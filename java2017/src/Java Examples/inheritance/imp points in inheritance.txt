@@ -1,0 +1,139 @@
+NOTE:
+---------
+
+Abstract class's can have a constructor, but you cannot access it through the object, since you cannot instantiate abstract class. 
+
+To access the constructor create a sub class and extend the abstract class which is having the constructor.
+
+
+Example
+public abstract class AbstractExample 
+{
+  public AbstractExample()
+  {
+     System.out.println("In AbstractExample()");
+  }
+}
+
+ public class Test extends AbstractExample
+ {
+   public static void main(String args[])
+   {
+     Test obj=new Test();
+   }
+ }
+
+
+
+
+What's the difference between an interface and an abstract class?
+
+(Ans) Abstract class is a class which contain one or more abstract methods, which has to be implemented by sub classes.
+
+ Interface is a Java Object containing method declaration and doesn't contain implementation. 
+
+The classes which have implementing the Interfaces must provide the method definition for all the methods Abstract class is a Class prefix with a abstract keyword followed by Class definition. 
+
+Interface is a Interface which starts with interface keyword.
+
+Abstract class contains one or more abstract methods.
+
+where as Interface contains all abstract methods and final declarations
+Abstract classes are useful in a situation that Some general methods should be implemented and specialization behavior should be implemented by child classes. 
+
+Interfaces are useful in a situation that all properties should be implemented.
+
+
+
+
+
+why java doesnot support multiple ionheritance
+
+Suppose consider a method test() which is in class Z.
+
+Suppose a programmer ABCD inherited the class Z to class X and overrided the
+test(). So this class will have the new implementation of test().
+
+Suppose a programmer DEF inherited the class Z to class Y and overrided the funX().
+So this class will have the new implementation of test().
+
+If Multiple Inheritance is permitted in java, then if the new programmer
+inherited both the classes and he didn't done any overriding of method test()
+then if he calls the test() ,the JVM will not know which method to call i.e.,
+either the method in class X or method in class Y.
+
+Because of this inconsistencies, Multiple inheritance is not permitted in
+java.
+
+
+ex 2) 
+
+
+To avoid ambiguity problem , Java does not supports it .
+Suppose there is a class z containing the definition of function a().
+
+class z
+{
+    
+  void  a()
+   {
+         --
+          --
+  }
+}
+
+class X extends Z
+{
+
+  void  a()
+  {
+    sopl("in x");
+  }
+}
+
+class b extends x,y
+{
+ 
+    //void a() not defined here
+}
+
+
+Suppose a programmer created a class x which extends class z and redefine the function a().
+Now he creates a new class y which also extends the class z and again redefine the function a(). ..
+At last suppose he created a class b which extends class x and y but does not define the function a() this time so it will be difficult to recognize , function a() of which class to call ...
+but in C++ , with the help of scope resolution operator "::" we can call the function of the class we want .
+
+ Suppose he want to call the function a() from class x then he will write x::function a()...so just by varying the class name he can call the same function from any class.
+
+
+
+ans) 
+
+
+First reason is ambiguity around Diamond problem, 
+
+consider a class A has disp() method and then B and C derived from A and has there own disp() implementation and now class D derive from B and C using multiple inheritance and if we refer just disp() compiler will not be able to decide which disp() it should invoke. This is also called Diamond problem because structure on this inheritance scenario is similar to 4 edge diamond, see below
+
+           A disp()
+
+           / \
+
+          /   \
+
+  disp() B     C disp()
+
+          \   /
+
+           \ /
+
+            D
+
+           disp()
+
+
+if we remove the top head of diamond class A and allow multiple inheritances we will see this problem of ambiguity.
+ 
+. 
+
+java avoids this ambiguity by supporting single inheritance with interfaces. Since interface only have method declaration and doesn't provide any implementation there will only be just one implementation of specific method hence there would not be any ambiguity.
+ 

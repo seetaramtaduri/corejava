@@ -1,0 +1,253 @@
+
+		       ****EXCEPTION HANDLING****
+		       *           BY           *
+		       *        SEETA RAM	*
+		       **************************
+Errors are of  3 types 
+
+1)compile errors(syntax errors)
+2)runtime errors(insufficient memory)
+   --not detected by java compiler.
+     class without main().
+3)logical Errors
+    --due to error in  logic.
+
+Note:
+
+compile time error is called as Errors
+runtime errors are called  as Exceptions
+
+___________________________________________________________
+Exception
+---------
+2 types
+
+--> checked Exceptions
+--> unchecked Exceptions
+
+In Java, exceptions are objects
+
+Exception class is the super class of all Exceptions in java
+Exception is subclass of Throwable class 
+
+Throwable  is a subclass of Object class.
+
+
+Checked Exceptions
+------------------
+-> If compiler checks errors at compile time then they are called Checked Exceptions
+-> These Errors are handled by programer
+-> we can throw these Errors without  handling them.
+   
+Ex:
+   public static void main(String a[])throws Exception
+                                     --------
+ex: invalid user input.
+    file not Found
+    Database Problems
+
+unChecked Exceptions
+---------------------
+if JVM Detects errors at run time then they are called 
+unChecked Exceptions
+
+-->All Exceptions are declared as classes in java
+-->Errors are also represented as classes in java
+-->all these classes are derived from a super class 
+called as "Throwable".
+ 
+___________________________________________________________
+              java.lang
+	          |
+      |----------------------------|
+unchecked Exceptions        Checked Exceptions
+    (Errors)		           |
+  (all errors)		    -----------------
+                            |               |
+			    Runtime       other Exceptions    			  Exceptions
+			    
+___________________________________________________________
+Exception Handling
+-------------------
+
+Handling runtime Errors(Exceptions) properly is called as Exception Handling.
+
+we use try-->catch-->finally blocks
+
+syntax :
+          try
+	  {
+	    // code that contains Exception
+	  }
+	  catch(ExceptionType expObj)
+	  {
+	    ---
+	    --
+	  }
+	  finally
+	  {
+
+	     // statements that are to be Excuted 
+	        irrespective of the Exception is Handled
+          }
+
+Try,catch and finally are keywords in java.
+
+in try block
+------------
+
+when an Exception occurs in the code the program will not terminate and when the JVM understands that there
+is an Exception,it stores the Exception Details in an Exception stack and jumps into catch block.
+
+-->Every try should have atleast one catch block.
+
+in catch block:
+----------------
+To display the error details we can use any  of the following methods.
+--- print(e.getMessage())
+--- println(exception object)
+--> use e.printStackTrace() method of Throwable class
+    this method fetches the Exception details from Exception stack. it also displays  error type,error message,and its originated place.
+
+
+in finally block
+-----------------
+
+here we write the  code to close files,close database connections,and also write the code that has to be executed even though if an  Exception that has occured in a program.
+
+--> program to demo Exception Handling
+___________________________________________________________
+
+Multiple Catch Blocks
+----------------------
+
+Suppose the code generates more than one type of exception we can have multiple catch blocks with each block matching one of the exceptions. 
+
+-->When a particular exception is thrown from the try block, the catch statements are searched for the match. 
+
+-->if the related Exception is  found, the corresponding statements in     the catch block are executed.
+
+-->If no match is found, the default exception handler is invoked.
+
+NOTE:
+
+ --> Exception Hierarchy follows least to high order 
+     For example: 
+        If we want to  catch FileNotFoundException and IO Exception within a try block. 
+	we first  write the  catch FileNotFound exception before the IOException. 
+
+
+___________________________________________________________
+Throws:
+--------
+
+-->if we donot want to handle exceptions, we use "throws"  clause so that the callers of this method can guard against that exception. 
+-->The throws clause usually contains a list of types of exceptions that are likely to occur in that program.
+The general form of a method declaration that uses a throws clause would look like
+type methodname(parameter list) throws exception list
+{
+  Body of the method
+}
+
+program to demo throws keyword
+_______________________________________________________________________
+
+
+Types of Exceptions
+--------------------
+
+1)Builtin Exceptions
+
+ex:
+
+ArithmeticException 
+ArrayIndexOutOfBoundsException 
+ClassNotFoundException 
+Exception 
+IllegalArgumentException 
+IndexOutOfBoundsException 
+InterruptedException 
+NegativeArraySizeException 
+NoSuchFieldException 
+NoSuchMethodException 
+NullPointerException 
+NumberFormatException 
+RuntimeException 
+StringIndexOutOfBoundsException 
+
+Errors
+---------
+
+
+
+2)Userdefined Exceptions
+
+defined by the user.
+
+
+User-defined exceptions (using throw keyword)
+------------------------ 
+we can also create our own exceptions and can  throw those Exceptions.
+
+the following steps are required to create our own Exceptions
+
+1) your class should extend Exception class.
+
+   ie.,  
+   
+   class MyException extends Exception
+
+2) write a def constructor of your class.
+
+   MyException(){}
+
+3) create a parameterized constructor with to store 
+   Exception details.
+    MyException(String s)
+    {
+    
+    
+    
+    }
+
+4)override toString() method of Exception Class
+
+
+program to demo userdefined Exception
+--------------------------------------
+
+
+***rethrowing an Exception
+   -----------------------
+we can rethrow an exception from one catch block to another catch block
+
+program
+
+Nested  try
+------------
+
+
+a try within another try is  called nested try
+
+Syntax:
+-------
+
+try
+{
+   try
+   {
+      ----
+   }
+   catch(ArrayIndexOutOfBoundsException ae)
+   {
+      ---
+   }
+}
+catch(Exception e)
+{
+   ---
+}
+finally
+{
+ --
+}

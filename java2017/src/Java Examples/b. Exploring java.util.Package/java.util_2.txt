@@ -1,0 +1,266 @@
+java.util
+----------
+to handle a group of elements we use  Arrays.
+to hadle a group of objects we use Collections.
+
+using Array also it is possible to store group of Objects
+
+ex:
+      Person p[]=new Person[3];
+ 
+this array stores a 3 objects of person class
+
+program to store objects into Array
+
+
+using arrays we can store objects 
+but
+--->we cannot store different class  objects into the same array
+--->we cannot insert and delete elements from middle in the Array
+--->no methods to process the retrieved elements from an Array
+
+due to these problems we go for collection classes
+
+
+-->we use one  class object to store another object
+
+--> such object is called "collection object" (or) "container object" .
+
+Collection Object
+------------------
+
+all collection classes are available in java.util package
+
+collection framework is a class library to handle groups of objects.
+
+*****(imp)**A collection object doesnot store physical copies of objects but it stores the references of other objects in collection object.
+
+why because the other objects are already available in memory so memeory is not wasted again to store them physically.
+
+
+we have the following interfaces and their implementational classes.
+
+
+set<T>                   List<T>          Queue<T>            Map<K,V>
+--------		--------	----------------      ---------
+class HashSet<t>	class Stack<T>	   classs LinkedList<T>	class HashMap<k,v>
+class  LinkedHashSet<T>	class LinkedList<T>                     class Hashtable<k,v>
+                        class ArrayList<T>	
+			class Vector<T>
+----------------------------------------------------------------------------------
+Set 
+
+--> represents group of elements arranged just like array
+-->but it grows dynamically
+-->it will not allow duplicate elements and doesnt store them
+
+program to demo HashSet and LinkedHashSet
+
+-----------------------------------------------------------------------------------
+
+List:
+
+-->They are like sets
+-->they store groups of elements with duplicates.
+
+program to demo stack,LinkedList , ArrayList, Vector classes.
+
+---------------------------------------------------------
+
+Queues:
+
+-->stores elements in fifo order.
+-->duplicates allowed.
+
+Maps
+
+--> stores elements in key,value pairs.
+--> the keys  should not be identical or similar.
+
+
+Note:we cannot store primitive data types collections are meant for storing objects.
+
+
+to retrieve elements from Collections we can use the following interfaces
+
+1)using for ech loops.
+2)using Iterator interface.
+3)using ListIteratot interface.
+4)using Enumeration interface.
+
+for each loop
+--------------
+syntax: for(var:collection_object)
+        {
+	     statements
+	}
+
+Iterator interface:
+--------------------
+in this we  have 3 methods to retrieve elements only from forward direction and remove elements
+
+methods:
+
+booelan hasNext()
+element next();
+void remove();
+
+
+ListIterator interface
+------------------------
+
+using the methods in this interface we can retrieve elements for the collection object from font and back directions.
+
+methods:
+
+boolean hasNext()
+boolean hasPrevious()
+element next()
+element previous()
+void remove()
+
+Enumeration
+-----------
+works like iterator to retrieve elements one by one.
+
+methods:
+
+booelan hasMoreElements()
+element nextElement()
+
+let us discuss about the implementation classes.
+
+HashSet class
+-------------
+no order of elements
+can store integer ,double,float,string objs etc
+
+3  constructors (look at API)
+
+loadfactor means capacity to store (intial capacity is 16 and default load factor is
+0.75)
+
+50*0.5= 50.5 -->after stroing 50 elements its capacity will be i nternally increased.
+
+methods:
+
+add(obj),remove(obj),clear(),contains(obj),isEmpty(),size() etc
+
+program to Demo HashSet
+_________________________________________________________________________________
+
+LinkedHashSet
+
+LinkedHashSet maintains a linked list of the entries in the set, in the order in which theywere inserted. so we get elements according to the  "insertion-order" . 
+
+we use  an iterator to get the order in which they were inserted.
+
+program to demo LinkedHashSet class
+
+________________________________________________________________________________
+
+
+Stack class
+-------------
+
+A stck represents a group of elemenst arranged in LIFO order
+
+methods:
+empty(),peek(),push(),search()
+
+
+
+
+
+
+
+
+
+The  Java  Utilities  Package provides  various  classes  to perform different utility functions like dates, data  structures, random  numbers, string tokenizers, Dictionary,  hashtables  etc.  
+     
+ -->  The java.util package also contains one of Java’s most powerful subsystems: The      Collections Framework.     
+
+
+some Utilities Package Classes
+
+Date            
+Dictionary      
+Hashtable       
+
+Random         
+Stack           
+StringTokenizer 
+Vector          
+ArrayList
+
+
+ 
+The Date class:
+----------------
+
+     The date class is used to perform date and time  operations.   
+
+constructors and methos refer API
+
+program to demo Date class
+
+The Random Method:
+-------------------
+  The  Random  Method generates pseudo random numbers  in  the range 0 to 1 not including 0 and 1.  
+     
+  In order to generate random numbers in other ranges one can use the general formula
+
+ n = a + (int)(Math.random()*b)
+
+where  a  is the first number in the desired range and b  is  the scaling  factor(which is equal to the width of the desired  range of  consecutive  integers).    
+For example,  to  generate  random numbers in the range, say 500 to 1700, one can use the formula 
+
+ int n = 500 + (int)(Math.random()*1200
+ 
+ex:Program to Demo Random class
+
+
+The StringTokenizer Class:
+--------------------------
+used to  parse a string into a number  of  smaller  strings  called  tokens.  
+The   default delimiter between tokens is space.
+
+ex: program to demo StringTokenizer
+
+The Vector Class:
+-----------------
+The  vector  class  implements a dynamically  growing  array,  something similar  to linked lists in C.   
+
+The array grows larger  as  more elements are added to it. 
+
+The array may also be reduced in size after  some  of its elements are removed. 
+
+ex: program to Demo Vector class
+
+
+
+The Stack Class:
+-----------------
+The stack data structure .
+
+The  stack class  implements  a LIFO(Lasst-in-First-Out) stack  of  objects, similar to the stacking of dinner plates in a hotel. 
+
+The  plate which  is  placed  last on the stack  is  removed  first.  
+
+This process is called popping and pushing.  
+
+ex: Program to demo Stack class
+
+
+The Dictionary and the Hashtable Class:
+-----------------------------------------
+The Dictionary class is an abstract class used as a base for the hashtable class.
+
+It implements a data structure that allows a collection of key and value pairs to be stored.   
+
+Typically the key is  used  to  search  for  a  corresponding  value.
+
+The hashtable  class enables us to store large amount of data in  the memory  and then searching it using the key value for each  data.   
+
+Ex: program to demo HashTable
+

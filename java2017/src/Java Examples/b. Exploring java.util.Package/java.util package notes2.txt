@@ -1,0 +1,98 @@
+StringTokenizer Class  :
+-------------------------
+The StringTokenizer class helps in breaking a String into tokens. 
+
+->we know that a String  contains is a group of characters. Such a group is called a token.
+
+->Tokens are separated from each other by delimiter characters.
+
+  For example, say that you need to add up the following numbers:
+  12  8  5  32
+->we can group these characters to form four integers separated by spaces. 
+
+->The tokens in this case are 12 and 8 and 5 and 32. 
+
+->These tokens are delimited by the space character.
+
+->The default delimiters are: space, tab, newline, and carriage return.
+
+constructors  :
+----------------
+
+a) public StringTokenizer( String arg ) :Create   a   StringTokenizer   based   on                                             String,   using   the   default  delimiters.
+
+b) public  StringTokenizer(  String  arg,  String  delimit) :
+    
+    Create  a StringTokenizer  based  on  String,  using  the individual characters in delimit as delimiters.
+
+c) public  StringTokenizer(  String  arg,  String  delimit,  boolean  ret)  :  
+   As  above,  but  if  ret  is  true,  then individial delimiters count as tokens also.
+
+Methods  :
+-----------
+1) int countTokens( )  :          Return the number of tokens remaining. 
+2) boolean hasMoreTokens( ) :     Return true if there are more tokens.
+3) String nextToken( )  :         Return the next token. , 
+ 
+ex: program to demo The StringTokenizer class 
+
+NOTE:Tokens can be separated by more than one delimiter. 
+
+____________________________________________________________________________________
+
+2) Date class
+ ------------
+The java.util.Date class can be used to construct objects that represent a specific point in time, with millisecond accuracy.
+
+Obviously to interpret a point in time correctly, you also need to know what calendar and what timezone is appropriate.
+
+
+Ex:program to demo Date
+
+Format constants
+   ------------------
+
+    DateFormat.FULL  -->03 september 2011 19:43:14 clock GMT 05:30
+    DateFormat.LONG  -->03 september 2011 19:43:14 clock GMT 05:30
+    DateFormat.MEDIUM
+    DateFormat.SHORT
+
+we import java.text package to format date
+
+
+
+Calendar class 
+---------------
+
+--it helps in knowing the system date
+--it helps in storing the data and time value 
+
+Calendar c=new Calendar.getInstance();
+
+methods:
+
+int get(int field)
+Calendar.DATE
+Calendar.DAY
+Calendar.MONTH
+Calendar.YEAR
+Calendar.HOUR
+Calendar.MINUTE
+Calendar.SECOND
+Calendar.AM_PM
+void set(int field,int value)
+
+  ex: to set date like 15th march 2010
+  c1.set(Calender.DATE,15);
+  c2.set(Calender.MONTH,2);
+  c3.set(Calender.YEAR,2010);
+
+equals()
+toString()
+
+program to demo calendar class
+
+
+
+and  GregorianCalendar  Classes :
+   ------------

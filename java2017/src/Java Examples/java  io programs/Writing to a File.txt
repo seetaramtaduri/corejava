@@ -1,0 +1,34 @@
+Writing to a File
+---------------------
+To open a file for output, create a FileOutputStream object. 
+Here are its two most commonly used constructors.
+FileOutputStream(String fileName) throws FileNotFoundException
+FileOutputStream(String fileName, boolean append)
+throws FileNotFoundException
+If the file cannot be created, then FileNotFoundException is thrown. 
+
+In the first form, when an output file is opened, any preexisting file by the same name is destroyed. 
+
+In the second form, if append is true, then output is appended to the end of the file. Otherwise, the
+file is overwritten.
+To write to a file, you will use the write( ) method. Its simplest form is shown here:
+
+void write(int byteval) throws IOException
+    This method writes the byte specified by byteval to the file. Although byteval is declared as an integer, only the low-order 8 bits are written to the file. If an error occurs during writing, an IOException is thrown.
+
+As you may know, when file output is performed, that output often is not immediately written to the actual physical device. 
+Instead, output is buffered until a sizable chunk of data
+can be written all at once. 
+
+This improves the efficiency of the system. For example, disk files are organized by sectors, which might be anywhere from 128 bytes long on up.
+
+Output is usually buffered until an entire sector can be written all at once.
+
+However, if you want to cause data to be written to the physical device whether or not the buffer is full, you can call flush( ),
+shown here.
+
+void flush( ) throws IOException
+   An exception is thrown on failure.
+Once you are done with an output file, you must close it using close( ), shown here:
+void close( ) throws IOException
+Closing a file releases the system resources allocated to the file, allowing them to be used by another file. It also ensures that any output remaining in a disk buffer is actually written to  the disk.

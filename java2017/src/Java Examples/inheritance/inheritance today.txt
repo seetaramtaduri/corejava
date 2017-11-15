@@ -1,0 +1,185 @@
+
+prog to demo single  Inheritance 
+
+class A 
+{
+	  int x;
+	  int y;
+	  void get(int p, int q)
+ 	 {
+   		  x=p; 
+   		  y=q; 
+   		
+ 	 }
+  	void Show()
+  	{
+                       System.out.println(x);
+                 }
+}//end of A
+
+class B extends A
+{
+   void display()
+   {
+  	System.out.println("B");
+   }
+}
+public class SingInhDemo
+{
+   public static void main(String args[])
+   {
+                 B b = new B();
+   	b.get(5,6);
+   	b.Show();
+   }
+  
+}
+
+
+
+--------------------------------------------------------------
+
+
+Multilevel Inheritance
+
+---------------------
+
+class A {
+  int x;
+  int y;
+  int get(int p, int q){
+  x=p; y=q; return(0);
+  }
+  void Show(){
+  System.out.println(x);
+  }
+}
+class B extends A{
+  void Showb(){
+  System.out.println("B");
+  }
+}
+
+class C extends B{
+  void display(){
+  System.out.println("C");
+  }
+  public static void main(String args[]){
+  A a = new A();
+  a.get(5,6);
+  a.Show();
+  }
+}
+----------------------------------------------------------------------------
+
+
+Java does not support multiple Inheritance
+
+Multiple Inheritance
+
+The mechanism of inheriting the features of more than one base class into a single class is known as multiple inheritance. Java does not support multiple inheritance but the multiple inheritance can be achieved by using the interface.
+
+In Java Multiple Inheritance can be achieved through use of Interfaces by implementing more than one interfaces in a class.
+
+super keyword
+
+The super is java keyword. As the name suggest super is used to access the members of the super class.It is used for two purposes in java.
+ The first use of keyword super is to access the hidden data variables of the super class hidden by the sub class.
+
+e.g. Suppose class A is the super class that has two instance variables as  int a and float b. class B is the subclass that also contains its own data members named a and b. then we can access the super class (class A) variables a and b inside the subclass class B just by calling the following command.
+
+super.member;
+
+Here member can either be an instance variable or a method. This form of super most useful to handle situations where the local members of a subclass hides the members of a super class having the same name. The following example clarify all the confusions. 
+class A{
+  int a;
+  float b;
+  void Show(){
+  System.out.println("b in super class:  " + b);
+  }
+
+}
+
+class B extends A{
+  int a; 
+  float b;
+  B( int p, float q){
+  a = p;
+  super.b = q;
+  }
+  void Show(){
+  super.Show();
+  System.out.println("b in super class:  " + super.b);
+  System.out.println("a in sub class:  " + a);
+  }
+
+  public static void main(String[] args){
+  B subobj = new B(1, 5);
+  subobj.Show();
+  }
+}
+
+Output:
+C:\>java B
+b in super class: 5.0
+b in super class: 5.0
+a in sub class: 1
+
+
+---------------------------------------------------------------------------
+
+
+Use of super to call super class constructor: The second use of the keyword super in java is to call super class constructor in the subclass. This functionality can be achieved just by using the following command.
+
+super(param-list);
+
+Here parameter list is the list of the parameter requires by the constructor in the super class.
+
+super must be the first statement executed inside a super class constructor. 
+
+If we want to call the default constructor then we pass the empty parameter list. 
+
+WAP  program to illustrate the use of the super keyword to call a super class constructor. 
+
+
+ex: 
+
+
+class A{
+  int a;
+  int b;
+  int c;
+  A(int p, int q, int r){
+  a=p;
+  b=q;
+  c=r;
+  }
+}
+  
+  class B extends A{
+  int d;
+  B(int l, int m, int n, int o){
+  super(l,m,n);
+  d=o;
+  }
+  void Show(){
+  System.out.println("a = " + a);
+  System.out.println("b = " + b);
+  System.out.println("c = " + c);
+  System.out.println("d = " + d);
+  }
+
+  public static void main(String args[]){
+  B b = new B(4,3,8,7);
+  b.Show();
+  }
+  }
+
+Output:
+C:\>java B
+a = 4
+b = 3
+c = 8
+d = 7
+
+

@@ -1,0 +1,38 @@
+File Methods for Learning About a File or Directory 
+Method  Description 
+1) boolean canExecute():
+     Return true when this File object’s abstract pathname 
+     represents an existing file that the application is allowed to 
+     execute. 
+2) boolean canRead() 
+         Return true when this File object’s abstract pathname 
+     represents an existing readable file. 
+3) boolean canWrite() 
+     Return true when this File object’s abstract pathname 
+  represents an existing file that can be modified. 
+4) boolean exists() 
+      Return true if and only if the file or directory that’s denoted 
+by this File object’s abstract pathname exists. 
+5)  boolean isDirectory() 
+      Return true when this File object’s abstract pathname refers 
+to an existing directory. 
+6) boolean isFile() 
+     Return true when this File object’s abstract pathname refers 
+  to an existing normal file. 
+7) long lastModified()  
+        Return the time that the file denoted by this File object’s 
+abstract pathname was last modified
+
+8) long length()
+      Return the length of the file denoted by this File object’s 
+abstract pathname. 
+
+
+File Methods for Obtaining Directory Content 
+------------------------------------------------------------
+
+String[] list() 
+
+Return a potentially empty array of strings naming the 
+files and directories in the directory
+

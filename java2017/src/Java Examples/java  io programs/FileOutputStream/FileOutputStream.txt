@@ -1,0 +1,16 @@
+FileOutputStream
+-------------------------
+
+belongs to Byte stream
+stores data in the formof individual bits.
+used to create text files
+
+steps to create a file that stores some characters
+
+Attach a file to FileOutputStream where data has to be stored
+
+FileOutputStream fos=new FileOutputStream("myfile.txt");
+
+read data through keyboard
+ch=(char)dis.read();
+fos.write(ch);

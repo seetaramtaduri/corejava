@@ -1,0 +1,51 @@
+Enumerations, Autoboxing, and Annotations (Metadata)
+
+Enumeration 
+----------------
+--> it is a list of named constants.
+
+--> in JDK 5, enumerations were added to the Java language, and they are now available to the Java programmer.
+
+--> in Java, an enumeration can have constructors, methods, and instance variables.
+
+An enumeration is created using the enum keyword. 
+
+For example
+
+ here is a simple enumeration that lists various colors varieties: 
+
+
+// An enumeration of Colors varieties. 
+
+enum Colors { Red, Green, blue, White }
+
+
+Red Green etc  are called enumeration constants.
+
+Each constants are  implicitly declared as a public, static final member of Color.
+
+enum Color red;
+  here red is of color type
+in Java, these constants are called self-typed, in which “self” refers to the enclosing enumeration.
+
+ we  can create a variable of enum  type.
+
+ Color r;
+ r=Color.blue;
+
+ we can compare two enum constants
+
+ An enumeration value can also be used to control a switch statement.
+
+ // Use an enum to control a switch statement.
+ switch(r) { case red: 
+                                     
+		   case blue:
+		 }
+
+When an enumeration constant is displayed using  println( ) statement, its name is output.
+System.out.println(Color.red);
+
+Program to demo enum
+
+The values( ) and valueOf( ) Methods

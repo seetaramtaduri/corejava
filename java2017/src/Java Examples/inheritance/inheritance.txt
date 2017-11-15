@@ -1,0 +1,63 @@
+Inheritance       (Seeta Rama Rao.Taduri)
+----------------
+is the process by which a new class—known as a derived class—is created from  another  class,  called  the  base  class. 
+
+Derived Class (Subclass)
+-------------------------------
+A derived class is a class defined by adding instance variables and methods to an existing class. 
+
+The existing class that the derived class is built upon is
+called the base class. 
+
+public class HourlyEmployee extends Employee
+
+A derived class is also called a subclass, in which case the base class is usually called a superclass. 
+
+When we  define a derived class, we  give only the added instance variables and the added methods.
+ 
+ ex:  The class HourlyEmployee (or any other derived class) is said to inherit the instance variables and  methods  of  the  base  class  that  it  extends.  
+
+  You  define  a  derived  class  by  starting  with  another  already  defined  class  and  adding  (or changing) methods, instance variables, and static variables. 
+
+The derived class inherits all the public methods, all the public and private instance variables, and all the public and private static variables from the base class and can
+add more instance variables, more static variables, and more methods. 
+
+T he only members not inherited are private methods. 
+
+A derived class is also called a subclass, in which case the base class is usually called a superclass. 
+
+SYNTAX
+-------------
+public class Derived_Class_Name  extends Base_Class_Name
+{
+Declarations_of_Added_Static_Variables
+Declarations_of_Added_Instance_Variables
+Definitions_of_Added__And_Overridden_Methods
+}
+
+NOTE:
+
+A base class is often called the parent class. A derived class is then called a child class. 
+
+A class that is a parent of a parent of a parent of
+another  class  (or  some  other  number  of  “parent  of”  iterations)  is  often  called  an  ancestor class. 
+
+If class A is an ancestor of class B, then class B is often called a descendent of class A.
+
+Overriding a Method Definition
+------------------------------------------
+
+A derived class inherits methods that belong to the base class.
+A derived class can give a different definition for an inherited method, the method may be redefined in the derived class. 
+This is called overriding the method definition. 
+
+You can change the access permission of an overridden method from private in the base class to public in the derived class 
+
+but you cannot change base class method public to private
+               *****************************
+ Encapsulation and Inheritance 
+ --------------------------------------
+ Use of Private Instance Variables from the Base Class
+ ----------------------------------------------------------------------
+An instance variable (or method) that is
+private in a base class is not accessible by name in the definition of a method in any other class, not even in a method definition of a derived class.

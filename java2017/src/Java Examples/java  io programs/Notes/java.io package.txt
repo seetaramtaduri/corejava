@@ -1,0 +1,113 @@
+java.io package
+--------------
+System.out represents monitor.
+
+System.in  represents keyboard.
+
+System.err represents writing errors to the console(monitor).
+
+
+Streams are used to read and write info to devices,files,databases,network sockets etc
+
+
+The package is used for two or more process to send  information to each other.
+
+
+
+the io stream classes defined by java.io are
+
+
+InputStream
+-------------
+   - FilterInputStream
+          
+          - BufferedInputStream.
+	 
+	  - DataInputStream.
+	 
+          - LineNumberInputStream.
+	  
+	  - PushBackInputStream
+   
+  - ByteArayInputStream.
+  
+  - FileInputStream.
+ 
+  - ObjectInputStream.
+
+  - PipedInputStream.
+  
+  - SequenceInputStream.
+    
+  - StringBufferInputStream.
+
+the above streams are also called Byte stream classes for 
+reading Data
+
+OutPutStream
+-------------
+- FilterOutputStream
+          
+          - BufferedOutputStream
+	  - DataOutputStream
+	  - PrintStream
+	 
+   - ByteArrayOutputStream.
+   
+   - FilOutputStream.
+   
+   - ObjectOutputStream.
+   
+   - PipedOutputStream.
+
+-----------------------------------------------------------
+
+File Class
+----------
+Constructors:
+---------------
+methods 
+----------
+
+       boolean  isFile()
+       boolean  isDirectory()
+       boolean  canRead()
+       boolean  canWrite()
+       String   getName()
+       String   getParent()
+       int      length()
+       String getPath()
+
+
+program to demo File class
+--------------------------------------------------------------------------------   
+
+ByteArrayInputStream :
+
+--> it is sub classs of InptStream class
+
+--> A  contains an internal buffer that contains bytes that may be read from the stream. 
+
+-->An internal counter keeps track of the next byte to be supplied by the read method.  
+
+
+
+
+Class ByteArrayOutputStream
+----------------------------  
+
+  --> it is a subclass of OutputStream . 
+  --> In This class  the data is written into a byte array. 
+  --> The buffer automatically grows as data is written to it. 
+  --> The data can be retrieved using toByteArray() and toString().
+  
+  java.lang.Object
+     java.io.OutputStream
+        java.io.ByteArrayOutputStream
+
+methods
+--------
+1)write(byte[] b, int off, int len) 
+          
+  Writes no fo  bytes from the specified byte array starting at specified index
+  to this byte array output stream.

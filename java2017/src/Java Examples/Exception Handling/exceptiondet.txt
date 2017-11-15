@@ -1,0 +1,29 @@
+Exception:--- An exception is a runtime error.All exceptions occur only at "runtime but some exceptions are detected at compile time and some
+others  at run time.
+
+-->the exceptions that are checked at compilation time by the java compiler are called 'checked exceptions' while the exceptions that are 
+checked by the JVM are called  "unchecked exceptions".
+
+--->Throwable is a class that represents all errors and exceptions which may occur in java.
+--->Exception is the super class of all exceptions in java.
+--->exception handling:::----------
+
+step 1:  the programmer should observe the statements in his program where there may be a possibility of exceptions.such statements
+should be written inside a try block.
+
+	try{
+		statements;
+		}
+---if there is any exception then jumps into a catch block.
+
+step2:the programmer should write the catch block where he should display the exception details to the user.
+	catch(ExceptionClass  ref)
+	{
+	  statements;
+	}
+step 3: lastly, the programmer should perform clean up operations like closing the files and terminating the threads. the programmer should write
+this code in the finally block.
+	finally{
+		statements;
+		}
+---->the speciality of finally block is that the statements inside the finally block are executed irrespective of whether  there is an exception or not.
