@@ -1,0 +1,20 @@
+ABSTRACT CLASSES
+------------------
+
+1) "abstract " keyword is used to create abstract classes.
+
+2)  abstract keyword can be declared infront of methods. 
+an abstract class contains both abstract both abstract methods and non abstract methods
+
+3) abstract class cannot be instantiated
+
+4) A class can  extend an abstract classes and it     must implement all the methods of
+   the abstract class.otherwise this class should be declared as abstract.
+
+5) abstract class should not be declared as final and abstract
+  
+   abstract final void mymethod //Error!!!
+   {
+
+   }
+     

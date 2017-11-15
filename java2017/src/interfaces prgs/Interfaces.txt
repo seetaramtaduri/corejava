@@ -1,0 +1,70 @@
+				Interfaces
+
+1) Interfaces are similar to  classes but it contains method signatures without implementations.
+
+2) Interfaces are used to implement multiple inheritence.
+ in java,since no two classes can be extended by  a single class we can use interfaces to do so.
+
+3)An interface is a named collection of method declarations  without implementation.
+
+4) "interface"  keyword is used to declare interface. and  "implements" keyword is 
+used by sub classes to implement methods defined in the interface .
+   
+   interface Car
+   {
+        int  wheels=4;
+	static final String color="red";
+	public void cardetails();
+   }
+
+6) All the variables declared in an interface can be  declared as "static" and "final".
+   
+class Santro implements Car
+{
+       public void cardetails()
+       {
+          --
+	  --
+	  --
+       }
+    }
+7)All interfaces methods  are public and abstract by default.
+
+  public abstract interface Car
+  {
+    ---
+    ---
+  }
+
+7)we can create references to the interfaces.
+
+8)interfaces can be extended.
+
+  interface xyz
+  {
+    --
+  }
+  interface abc extends xyz
+  {
+    ----
+  }
+
+9)An interface cannot extend a class but a class can extend an interface.
+
+10) An interface cannot extend a class but it can extend any number of  interfaces.
+
+
+11)"extends"  key word is used to define inheritence.
+
+12) An interface cannot implement another interface or class.
+
+   
+interface intf1 implements intf2 //wrong!!!
+
+13) interface methods are abstract they cannot  be declared as final,native, strictfp,Synchronized.
+
+
+14)a class which implements the interface  all the methods  in the interface  must be implemented.
+
+15) if they are not implemented a class becomes abstract class cannot be instantiated.
+
