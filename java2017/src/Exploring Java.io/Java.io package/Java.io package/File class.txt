@@ -1,0 +1,22 @@
+All the methods related to I/O are present in the java.io package.
+File Operations 
+---------------------
+Files are the primary source and destination for data within most programs. 
+
+File is the class defined in java.io package 
+constructors
+----------------
+1) File (String) - string indicates directory path.
+2) File (string, string) - the first argument gives the path the  second argument indicates the file name.
+3) File (File, String) -  the first argument is a file object that specifies the directory.
+Example: 	File f1 = new File ("C = / java / temp / myfile");
+		File f2 = new File ("C = / java / temp", myfile");
+		File f3 = new File ("f1, "myfile");
+
+Methods of file class
+---------------------------
+getName ( ) - returns the name of the file
+getPath ( ) - returns the path of the file
+isExists ( ) - returns true if the file exists and false otherwise.
+isFile ( ) / isDirectory ( ) - used to check if the file is normal file or directory 
+length ( ) - returns the file size in bytes.

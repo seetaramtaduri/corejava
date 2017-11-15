@@ -1,0 +1,15 @@
+contents
+------------
+
+ program to demo ObjectInputStream 
+1) read file and dispay contents on the console using BufferedInputStream
+2)program to demo ByteArrayInputStream
+3)program to demo SequenceInputStream
+4)program to demo PushbackInputStream
+5)program to demo RandomAccess File
+6)program to read a File and display line number before each line
+7)prog to copy a file using buffered streams
+8)program to demo BufferedReader and BufferedWriter
+9)Program to ZIP and UNZIP files
+10)program to read and write files using Scanner class.
+

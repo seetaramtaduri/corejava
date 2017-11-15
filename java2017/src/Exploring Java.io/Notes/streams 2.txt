@@ -1,0 +1,94 @@
+
+stream
+------
+--> Java programs perform I/O operations through streams.
+
+--> A stream is a sequence of data that flow from a source to destination. i.e.,   
+    producing or consuming the information.
+
+--> A stream is linked to a physical device by the java I/O system. 
+
+--> The  physical device may be keyboard, memory, disk file, network socket or console. 
+
+Input to a java program :
+-------------------------
+A java program can consume input from a key board, memory, a disk file or a 
+network socket. 
+
+To bring in information, a program opens a stream on an information source (a file, memory, a socket) and reads the 
+information sequentially, as shown here: 
+
+Output from a java program : 
+----------------------------
+-> A java program can produce output on a console, memory, a disk file or a network  
+   socket. 
+-> Similarly, a program can send information to an external destination by opening a 
+   stream to a destination and  writing the information out sequentially, like this: 
+
+-> No matter where the data is coming from or going to and no matter what its type,  
+   the algorithms for  sequentially reading and writing data are basically the same : 
+
+*** Reading and  Writing invloves
+-->  open a stream
+
+-->  while more information
+      read information
+
+-->  close the stream
+
+-->  open a stream
+
+-->  while more information
+      write information
+
+-->  close the stream
+
+------>   All  of  the  streams  like --readers,  writers,  input  streams,  and  output  streams--are  automatically  opened  when  created. 
+
+You can close any stream explicitly by calling its close method. Or the garbage collector can implicitly close it, which occurs when the object is no longer referenced.
+
+_________________________________________________________________________________
+There are two kinds of streams :    
+
+   1) Byte Streams and 
+   2) Character Streams.
+
+
+The  java.io  package  contains  a  collection  of  stream  classes  
+(  InputStream  and  OutputStream  classes,    Reader and Writer classes ) 
+
+that support these algorithms for reading and writing.
+
+To use these classes, a program needs to import the java.io package.
+
+___________________________________________________________________________________
+*********Character Streams versus Byte Streams
+         -------------------------------------
+
+Prior to JDK 1.1, the input and output classes (mostly found in the java.io package) only supported 8- bit  byte  streams. 
+
+then The  concept  of  16-bit  Unicode  character  streams  was  introduced  in  JDK  1.1. 
+
+While  byte  streams were  supported via the java.io.InputStream and java.io.OutputStream classes and their subclasses, 
+
+character streams are implemented by the java.io.Reader and java.io.Writer classes and their subclasses. 
+
+Most  of  the  functionality  available  for  byte  streams  is  also  provided  for character  streams.  
+
+The methods for character streams generally accept parameters of data type char parameters, while byte streams, work  with  byte  data  types. 
+
+The  names  of  the  methods  in  both  sets  of  classes  are  almost 
+identical except for the suffix, that is, character-stream classes end with the suffix Reader or Writer and byte- stream classes end with the suffix InputStream and OutputStream.
+
+For example, to read files using character  streams,  you  would  use  the  java.io.FileReader  class;  
+
+for  reading  it  using  byte  streams  you  would  use java.io.FileInputStream. 
+
+NOTE:
+-----
+ Unless  you  are  working  with  binary  data,  such  as  image  and  sound  files, you  should  use  readers  and writers (character streams) to read and write information for the following reasons: 
+ 1) They can handle any character in the Unicode character set (while the byte streams are limited to ISO-Latin-1 8-bit bytes). 
+ 2) They  are  easier  to  internationalize  because  they  are  not  dependent  upon  a  specific  character  encoding. 
+ 3) They use buffering techniques  internally  and  are therefore potentially much more efficient than byte  streams. 
+
+

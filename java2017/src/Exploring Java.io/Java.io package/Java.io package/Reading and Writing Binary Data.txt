@@ -1,0 +1,60 @@
+Reading and Writing Binary Data
+So far, we have just been reading and writing bytes containing ASCII characters, but it is
+possible—indeed, common—to read and write other types of data. For example, you might
+want to create a file that contains ints, doubles, or shorts. To read and write binary values of
+the Java primitive types, you will use DataInputStream and DataOutputStream.
+DataOutputStream implements the DataOutput interface. This interface defines
+methods that write all of Java’s primitive types to a file. It is important to understand that this
+data is written using its internal, binary format, not its human-readable text form. The most
+commonly used output methods for Java’s primitive types are shown in Table 10-5. Each
+throws an IOException on failure.
+Here is the constructor for DataOutputStream. Notice that it is built upon an instance
+of OutputStream.
+DataOutputStream(OutputStream outputStream)
+
+void writeBoolean(boolean val ) Writes the boolean specified by val.
+void writeByte(int val ) Writes the low-order byte specified by val.
+void writeChar(int val ) Writes the value specified by val as a character.
+void writeDouble(double val ) Writes the double specified by val.
+void writeFloat(float val ) Writes the float specified by val.
+void writeInt(int val ) Writes the int specified by val.
+void writeLong(long val ) Writes the long specified by val.
+void writeShort(int val ) Writes the value specified by val as a short.
+Table 10-5  Commonly Used Output Methods Defined by DataOutputStream
+Here, outputStream is the stream to which data is written. To write output to a file, you can use
+the object created by FileOutputStream for this parameter.
+DataInputStream implements the DataInput interface, which provides methods for reading
+all of Java’s primitive types. These methods are shown in Table 10-6, and each can throw an
+IOException. DataInputStream uses an InputStream instance as its foundation, overlaying it
+with methods that read the various Java data types. Remember that DataInputStream reads data
+in its binary format, not its human-readable form. The constructor for DataInputStream is
+shown here.
+DataInputStream(InputStream inputStream)
+Commonly Used Output Methods Defined by DataOutputStream
+void writeBoolean(boolean val ) Writes the boolean specified by val.
+void writeByte(int val ) Writes the low-order byte specified by val.
+void writeChar(int val ) Writes the value specified by val as a character.
+void writeDouble(double val ) Writes the double specified by val.
+void writeFloat(float val ) Writes the float specified by val.
+void writeInt(int val ) Writes the int specified by val.
+void writeLong(long val ) Writes the long specified by val.
+void writeShort(int val ) Writes the value specified by val as a short.
+  
+
+
+
+Input Method Purpose
+boolean readBoolean( ) Reads a boolean
+byte readByte( ) Reads a byte
+char readChar( ) Reads a char
+double readDouble( ) Reads a double
+float readFloat( ) Reads a float
+int readInt( ) Reads an int
+long readLong( ) Reads a long
+short readShort( ) Reads a short
+
+Here, inputStream is the stream that is linked to the instance of DataInputStream being
+created. To read input from a file, you can use the object created by FileInputStream for
+this parameter.
+Here is a program that demonstrates DataOutputStream and DataInputStream. It writes
+and then reads back various types of data to and from a file.
