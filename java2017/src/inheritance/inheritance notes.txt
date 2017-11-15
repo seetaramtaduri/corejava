@@ -1,0 +1,27 @@
+Inheritance in real life is deriving something specific from something generic
+
+ex: santro is a specific instance of generic category Car
+
+inheritance helps in the reuse of code.
+
+There exists a "is - a - kind -of " relationship among classes in inheritance.
+
+ex: manager is a kind of Employee.
+
+in Aggregation ,  we can make up objects from other objects.
+
+Ex:Engine is a part of car.
+
+in aggregation we have " is a part of "  relationship among classes.
+
+Types of inheritance
+1)Single 
+2)multilevel
+3)multiple
+
+Deriving new classes using extends keyword
+---------------------------------------------------------
+class Myclass extends MySuperClass
+{
+...................
+}

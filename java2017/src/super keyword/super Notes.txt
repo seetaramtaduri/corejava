@@ -1,0 +1,17 @@
+The 'super' keyword
+---------------------
+--> super is used to call a super class constructor.
+ 
+-->we Specify  the word super along with the required arguments in the constructor of the derived class
+ 
+--> super() will  make a call to the constructor in the base class. 
+
+The following  example makes use of the keyword super.
+
+
+super can be used as follows
+
+-->for calling the methods of a super class.
+-->for calling the member variables of a super class.
+-->for invoking  constructors of super class.
+

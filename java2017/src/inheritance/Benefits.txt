@@ -1,0 +1,7 @@
+key benefits of inheritance is 
+
+--> to minimise the amount of duplicate code in an application by putting common code in a superclass and sharing amongst several subclasses. 
+
+Where equivalent code exists in two related classes.
+
+--> Inheritance can also make application code more flexible to change because classes that inherit from a common superclass can be used interchangeably. 

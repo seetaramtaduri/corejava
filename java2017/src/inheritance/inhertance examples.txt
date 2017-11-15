@@ -1,0 +1,351 @@
+/* Program to Implement Hierarchical Inheritance in java Programming Language */
+class Info
+{
+int pid;
+char branch;
+char year;
+
+Info(int p,char ch,char y)
+{
+pid = p;
+branch = ch;
+year = y;
+}
+
+void display()
+{
+System.out.println("\nPID\t: "+pid);
+
+System.out.print("Branch\t: ");
+if(branch == 'i')
+System.out.println("Information Technology");
+if(branch =='e')
+System.out.println("Electronics and Telecommunication");
+if(branch =='c')
+System.out.println("Computer Science");
+
+System.out.print("Year\t: ");
+if(year == 'f')
+System.out.println("FE");
+if(year == 's')
+System.out.println("SE");
+if(year == 't')
+System.out.println("TE");
+}
+}
+
+class Fe extends Info
+{
+int c;
+int cpp;
+
+Fe(int p,char ch,char y,int m1,int m2)
+{
+super(p,ch,y);
+c = m1;
+cpp = m2;
+}
+
+void fdisplay()
+{
+display();
+System.out.println("Performance:");
+System.out.println("\tC\t"+c);
+System.out.println("\tC++\t"+cpp);
+}
+}
+
+class Se extends Info
+{
+int vb;
+int html;
+
+Se(int p,char ch,char y,int m1,int m2)
+{
+super(p,ch,y);
+vb = m1;
+html= m2;
+}
+
+void sdisplay()
+{
+display();
+System.out.println("Performance:");
+System.out.println("\tVB\t"+vb);
+System.out.println("\tHTML\t"+html);
+}
+}
+
+class Te extends Info
+{
+int matlab;
+int java;
+
+Te(int p,char ch,char y,int m1,int m2)
+{
+super(p,ch,y);
+matlab = m1;
+java = m2;
+}
+void tdisplay()
+{
+display();
+System.out.println("Performance:");
+System.out.println("\tMATLAB\t"+matlab);
+System.out.println("\tSJava\t"+java);
+}
+}
+
+class Language
+{
+public static void main(String args[])
+{
+Fe F = new Fe(1074,'i','f',9,8);
+Se S = new Se(1064,'e','s',6,8);
+Te T = new Te(1054,'c','t',9,9);
+F.fdisplay();
+S.sdisplay();
+T.tdisplay();
+}
+}
+
+/* Output *
+
+
+PID : 1074
+Branch : Information Technology
+Year : FE
+Performance:
+C 9
+C++ 8
+
+PID : 1064
+Branch : Electronics and Telecommunication
+Year : SE
+Performance:
+VB 6
+HTML 8
+
+PID : 1054
+Branch : Computer Science
+Year : TE
+Performance:
+MATLAB 9
+SJava 9 */
+
+--------------------------------------------------------------------------
+
+
+Program that makes use of Multilevel Inheritance in java
+/* program To Implement Multilevel Inheritance */
+class Fe
+{
+double fp;
+int fr;
+
+Fe(double p1,int r1)
+{
+fp = p1;
+fr = r1;
+}
+}
+
+class Se extends Fe
+{
+double sp;
+int sr;
+
+Se(double p1,int r1,double p2,int r2)
+{
+super(p1,r1);
+sp = p2;
+sr = r2;
+}
+}
+
+class Te extends Se
+{
+double tp;
+int tr;
+
+Te(double p1,int r1,double p2,int r2,double p3,int r3)
+{
+super(p1,r1,p2,r2);
+tp = p3;
+tr = r3;
+}
+
+double average()
+{
+return (fp+sp+tp)/3;
+}
+}
+
+class Student
+{
+public static void main(String args[])
+{
+Te student = new Te(78.5,41,71.73,44,79.8,48);
+System.out.println("Year\tRoll no.\tPercentage");
+System.out.println("FE\t"+student.fr+"\t\t"+student.fp);
+System.out.println("SE\t"+student.sr+"\t\t"+student.sp);
+System.out.println("TE\t"+student.tr+"\t\t"+student.tp);
+System.out.println("\nAverage Performance is " + student.average());
+}
+}
+
+/* Output *
+
+Year Roll no. Percentage
+FE 41 78.5
+SE 44 71.73
+TE 48 79.8
+
+Average Performance is 76.67666666666668 */
+ 
+
+------------------------------------------------------------------------------------
+Single Inheritance Program To Find The Volume Of A cylinder and a sphere
+/* Program To Implement Simple Program On Single Inheritance */
+class Sphere
+{
+double r;
+
+double area()
+{
+return (r * r * r * 4 * 3.1416 / 3);
+}
+
+}
+
+class Cylinder extends Sphere
+{
+double h;
+
+double area()
+{
+return 3.1416 * r * r * h;
+}
+
+}
+
+class Volume
+{
+public static void main(String args[])
+{
+Cylinder C = new Cylinder();
+C.r = 2.0;
+C.h = 6.0;
+double cyl = C.area();
+
+Sphere S = new Sphere();
+S.r = 5.0;
+double sph = S.area();
+
+System.out.println("Area of sphere is "+sph+" and area of cylinder is "+cyl);
+}
+}
+
+/* OUTPUT *
+
+Area of sphere is 523.6 and area of cylinder is 75.3984 */ 
+
+--------------------------------------------------------------------------------------------
+
+Single Inheritance inherits the properties of one class into another class here is a program that implements single inheritance to find area of a rectangle..
+
+/* Single Inhetitance To Find Area Of Rectangle */
+class Dimensions
+{
+int length;
+int breadth;
+}
+
+class Rectangle extends Dimensions
+{
+int a;
+void area()
+{
+a = length * breadth;
+}
+
+}
+
+class Area
+{
+public static void main(String args[])
+{
+Rectangle Rect = new Rectangle();
+Rect.length = 7;
+Rect.breadth = 16;
+Rect.area();
+System.out.println("The Area of rectangle of length "
++Rect.length+" and breadth "+Rect.breadth+" is "+Rect.a);
+}
+}
+
+/* Output *
+
+The Area of rectangle of length 7 and breadth 16 is 112 */ 
+
+
+_____________________________________________________
+You use an interface to define a protocol of behavior that can be implemented by any class anywhere in the class hierarchy. Interfaces are useful for the following:
+
+    *
+      Capturing similarities among unrelated classes without artificially forcing a class relationship
+    *
+      Declaring methods that one or more classes are expected to implement
+    *
+      Revealing an object's programming interface without revealing its class
+    *
+      Modelling multiple inheritance, a feature that some object-oriented languages support that allows a class to have more than one superclass 
+
+Simple Program On Java for the implementation of Multiple inheritance using interfaces to calculate the area of a rectangle and triangle
+
+/* Area Of Rectangle and Triangle using Interface * /
+
+interface Area
+{
+float compute(float x, float y);
+}
+
+class Rectangle implements Area
+{
+public float compute(float x, float y)
+{
+return(x * y);
+}
+}
+
+class Triangle implements Area
+{
+public float compute(float x,float y)
+{
+return(x * y/2);
+}
+}
+
+class InterfaceArea
+{
+public static void main(String args[])
+{
+Rectangle rect = new Rectangle();
+Triangle tri = new Triangle();
+Area area;
+area = rect;
+System.out.println("Area Of Rectangle = "+ area.compute(1,2));
+
+area = tri;
+System.out.println("Area Of Triangle = "+ area.compute(10,2));
+}
+}
+/** OUTPUT **
+
+Area Of Rectangle = 2.0
+Area Of Triangle = 10.0
+*/
+
+-----------------------------------------------------------------------
+
+
